@@ -12,10 +12,12 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install -y yarn
 
+# Example rails app to test with
+# https://github.com/JetBrains/sample_rails_app
 ONBUILD COPY . /opt/app
 ONBUILD WORKDIR /opt/app
-ONBUILD RUN bundler install
 ONBUILD RUN yarn install
+ONBUILD RUN bundler install
 ONBUILD RUN rails db:migrate && rails db:seed
 ONBUILD EXPOSE 3000
 ONBUILD CMD ["rails", "server"]
