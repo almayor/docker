@@ -1,4 +1,4 @@
-# docker-1
+# docker
 
 *This project is part of the official curriculum at [School 42](https://en.wikipedia.org/wiki/42_(school)).*
 
