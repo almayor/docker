@@ -10,7 +10,7 @@
 
 # Acknowledgements
 
-I am grateful to the entire team behind School 42 and its [Moscow branch](https://21-school.ru
+I have learned a lot about Docker and how it works but following an **excellent** [tutorial](https://learndocker.online) by [Julian Fahrer](https://github.com/jfahrer). He is an outstanding teacher and human being, and I wish him all the best. As always, I am also grateful to the entire team behind School 42 and its [Moscow branch](https://21-school.ru
 ), as well as to my fellow students for help and support.
 
 ---
