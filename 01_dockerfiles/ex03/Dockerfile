@@ -1,12 +1,16 @@
 FROM debian
 
-# Fixing "Hash sum missmatch" bug with openssh-server
-# https://github.com/jenkinsci/docker/issues/543
-RUN apt update \
-	&& apt install -y \
-	-o Acquire::http::Pipeline-Depth=0 \
-	-o Acquire::http::No-Cache=true \
-	-o Acquire::BrokenProxy=true \
+# Solving "Hash mismatch" errors
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN rm -rf /var/lib/apt/lists/
+RUN echo 'Acquire::CompressionTypes::Order:: "gz";' >> /etc/apt/apt.conf
+RUN echo 'Acquire::http::Pipeline-Depth 0;' >> /etc/apt/apt.conf
+RUN echo 'Acquire::http::No-Cache true;' >> /etc/apt/apt.conf
+RUN echo 'Acquire::BrokenProxy true;' >> /etc/apt/apt.conf
+RUN apt-get clean
+
+RUN apt-get update \
+	&& apt-get install --no-install-recommends -y \
 		curl \
 		openssh-server \
 		ca-certificates \
