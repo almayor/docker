@@ -592,7 +592,7 @@ gitlab_rails['object_store']['objects']['terraform_state']['bucket'] = nil
 
 #### This is advanced feature used by large gitlab deployments where loading
 #### whole RAILS env takes a lot of time.
-# gitlab_rails['rake_cache_clear'] = true
+gitlab_rails['rake_cache_clear'] = false
 
 ### GitLab database settings
 ###! Docs: https://docs.gitlab.com/omnibus/settings/database.html
@@ -1816,7 +1816,7 @@ nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/server.key"
 ##! Docs: https://docs.gitlab.com/ee/administration/monitoring/prometheus/#prometheus-as-a-grafana-data-source
 ################################################################################
 
-# grafana['enable'] = true
+grafana['enable'] = false
 # grafana['log_directory'] = '/var/log/gitlab/grafana'
 # grafana['home'] = '/var/opt/gitlab/grafana'
 # grafana['admin_password'] = 'admin'

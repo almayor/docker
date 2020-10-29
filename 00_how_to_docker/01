@@ -1,1 +1,3 @@
 docker-machine create --driver virtualbox Char
+
+# how to increase CPU usage and memory: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac

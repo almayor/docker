@@ -22,6 +22,7 @@ EXPOSE 9987/udp 10011 30033
 ENTRYPOINT ["teamspeak3-server_linux_amd64/ts3server_minimal_runscript.sh"]
 
 # https://www.vultr.com/docs/how-to-install-teamspeak-3-server-on-debian-9-stretch
-# docker run --rm -p 9987:9987/udp -p 10011:10011 -p 30033:30033 --name teamspeak -d ex01
+# docker build -t ex01 .
+# docker run -p 9987:9987/udp -p 10011:10011 -p 30033:30033 --name teamspeak ex01
 # then use the ServerAdmin privilege key (token) to connect
 # (no need to specify connection port)
