@@ -22,9 +22,6 @@ ONBUILD EXPOSE 3000
 ONBUILD RUN rails db:migrate
 ONBUILD CMD ["rails", "server"]
 
-# cd ft_rails
-# docker build -t ft-rails:on-build .
-# cd ..
-# docker build -t ex02 .
+# docker build -t ft-rails:on-build ft-rails && docker build -t ex02 .
 # docker run -p 3000:3000 -d ex02
 # login with username=example@railstutorial.org and password=foobar
